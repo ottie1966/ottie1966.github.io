@@ -225,15 +225,26 @@ heroSlides[h].classList.add("active");
 /* GENERIC SLIDER */
 function startSlider(id){
 let slides = document.querySelectorAll("#"+id+" img");
-let i = 0;
+
+if(slides.length === 0) return; // voorkomt fouten
+
+let index = 0;
 
 setInterval(()=>{
-slides.forEach(s=>s.classList.remove("active"));
-i++;
-if(i>=slides.length){i=0;}
-slides[i].classList.add("active");
+slides[index].classList.remove("active");
+
+index++;
+if(index >= slides.length){ index = 0; }
+
+slides[index].classList.add("active");
+
 },3000);
 }
+
+// START
+startSlider("comfortSlider");
+startSlider("familySlider");
+startSlider("gardenSlider");
 
 startSlider("comfortSlider");
 startSlider("familySlider");
