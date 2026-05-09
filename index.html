@@ -3,108 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sawaddee Holland Rayong</title>
 
 <style>
+
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:#f5f5f5;
+font-family:Arial;
+background:#f4f4f4;
 }
 
-/* HEADER */
 header{
 background:#0f4c5c;
 color:white;
 padding:15px;
 text-align:center;
 font-size:22px;
-}
-
-/* HERO */
-.hero{
-height:260px;
-background:#ccc;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#333;
-}
-
-/* SECTION */
-.section{
-padding:25px 15px;
-text-align:center;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
-
-/* CARD */
-.card{
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-
-/* IMAGE */
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-display:block;
-}
-
-/* TEXT */
-.card p{
-margin:0;
-padding:10px;
 font-weight:bold;
-background:white;
 }
 
-/* SLIDER */
-.slider{
+/* HERO SLIDER */
+
+.hero{
 position:relative;
-height:200px;
+height:500px;
+overflow:hidden;
 }
 
-.slide{
+.hero img{
 position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
 opacity:0;
-transition:0.5s;
+transition:1s;
 }
 
-.slide.active{
+.hero img.active{
 opacity:1;
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-background:#ff7f11;
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+display:flex;
+justify-content:center;
+align-items:center;
 color:white;
-text-decoration:none;
-border-radius:8px;
+text-align:center;
 }
 
-/* MOBILE */
+.btn{
+background:#ff7f11;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+display:inline-block;
+margin:8px;
+font-weight:bold;
+}
+
+/* SECTIONS */
+
+.section{
+padding:40px 20px;
+text-align:center;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+/* SLIDERS */
+
+.slider img{
+display:none;
+}
+
+.slider img.active{
+display:block;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:26px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
 @media(max-width:700px){
-.grid{
-grid-template-columns:1fr;
+.hero{height:420px;}
+.card img{height:200px;}
 }
-}
+
 </style>
 </head>
 
@@ -112,100 +123,101 @@ grid-template-columns:1fr;
 
 <header>Sawaddee Holland Rayong</header>
 
-<!-- HERO (werkt ook zonder foto) -->
+<!-- HERO -->
+
 <div class="hero">
+<img src="beach1.jpg" class="active">
+<img src="beach2.jpg">
+<img src="beach3.jpg">
+
+<div class="overlay">
 <div>
-<h2>🌴 Welcome to Rayong</h2>
-<a class="btn" href="https://wa.me/66811520624">💬 WhatsApp</a>
+<h1>🌴 Your Tropical Escape</h1>
+<p>200m from the beach • Rooms • Bar • Pool table</p>
+
+<a class="btn" href="https://wa.me/66811520624">WhatsApp</a>
+</div>
 </div>
 </div>
 
 <!-- ROOMS -->
+
 <div class="section">
+
 <h2>Rooms</h2>
 
-<div class="grid">
-
-<!-- ROOM 1 -->
-<div class="card">
-<div class="slider">
-<img class="slide room1 active" src="room1.jpg" onerror="this.style.display='none'">
-<img class="slide room1" src="room1b.jpg" onerror="this.style.display='none'">
-<img class="slide room1" src="bathroom.jpg" onerror="this.style.display='none'">
+<div class="card slider" id="roomSlider">
+<img src="room2.jpg" class="active">
+<img src="room2_bathroom.jpg">
 </div>
 
-</div>
-<p>🌴 Family Room • Spacious • From 1800 THB / night</p>
-</div>
-
-<!-- ROOM 2 -->
-<div class="card">
-<div class="slider">
-<img class="slide room2 active" src="room2.jpg" onerror="this.style.display='none'">
-<img class="slide room2" src="room2b.jpg" onerror="this.style.display='none'">
-
-</div>
-<p>🌿 Comfort Room • Airco • WiFi • From 1200 THB / night</p>
-
-</div>
-</div>
-
-<!-- RESTAURANT -->
-<div class="section">
-<h2>Restaurant & Bar</h2>
-
-<div class="grid">
-<div class="card">
-<img src="restaurant.jpg" onerror="this.style.display='none'">
-</div>
-
-<div class="card">
-<img src="bar.jpg" onerror="this.style.display='none'">
-</div>
-</div>
+<p>Comfort & Family Rooms from 1200 THB</p>
 
 </div>
 
 <!-- GARDEN -->
+
 <div class="section">
-<h2>🌴 Outside & Garden</h2>
+
+<h2>Garden & Outside</h2>
+
+<div class="card slider" id="gardenSlider">
+<img src="garden1.jpg" class="active">
+<img src="garden2.jpg">
+<img src="outside.jpg">
+</div>
+
+<p>Relax in our tropical garden 🌿</p>
+
+</div>
+
+<!-- RESTAURANT -->
+
+<div class="section">
+
+<h2>Restaurant & Bar</h2>
 
 <div class="card">
-<img src="garden.jpg" onerror="this.style.display='none'">
-<p>Relax in our tropical garden near the beach</p>
+<img src="restaurant.jpg">
 </div>
 
 </div>
 
-<!-- GOOGLE MAPS -->
-<div class="section">
-<h2>📍 Location</h2>
+<!-- WHATSAPP FLOAT -->
 
-<iframe 
-src="https://www.google.com/maps?q=Rayong&output=embed"
-width="100%" 
-height="250" 
-style="border:0;">
-</iframe>
+<a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
-</div>
+<!-- SCRIPTS -->
 
 <script>
-function slider(name){
-let slides=document.querySelectorAll("."+name);
-if(slides.length === 0) return;
 
-let i=0;
+/* HERO FADE */
+let heroSlides = document.querySelectorAll(".hero img");
+let h = 0;
+
+setInterval(()=>{
+heroSlides.forEach(s=>s.classList.remove("active"));
+h++;
+if(h>=heroSlides.length){h=0;}
+heroSlides[h].classList.add("active");
+},3000);
+
+/* GENERIC SLIDER */
+function startSlider(id){
+let slides = document.querySelectorAll("#"+id+" img");
+let i = 0;
 
 setInterval(()=>{
 slides.forEach(s=>s.classList.remove("active"));
-i=(i+1)%slides.length;
+i++;
+if(i>=slides.length){i=0;}
 slides[i].classList.add("active");
 },3000);
 }
 
-slider("room1");
-slider("room2");
+startSlider("roomSlider");
+startSlider("gardenSlider");
+
 </script>
 
 </body>
