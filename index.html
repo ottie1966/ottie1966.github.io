@@ -8,27 +8,91 @@
 
 <style>
 
-body{margin:0;font-family:Arial;background:#f4f4f4}
+body{
+margin:0;
+font-family:Arial;
+background:#f4f4f4;
+}
 
-header{background:#0f4c5c;color:#fff;padding:15px;text-align:center;font-size:24px}
+header{
+background:#0f4c5c;
+color:white;
+padding:15px;
+text-align:center;
+font-size:24px;
+}
 
-.section{padding:40px 20px;text-align:center}
+.section{
+padding:40px 20px;
+text-align:center;
+}
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
 
-.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
 
-.card img{width:100%;height:240px;object-fit:cover}
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
 
-.card p{padding:10px;font-weight:bold}
+.card p{
+padding:10px;
+font-weight:bold;
+}
 
-.slider{position:relative;height:240px}
+/* SLIDER */
+.slider{
+position:relative;
+height:240px;
+}
 
-.slide{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:0.5s}
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:0.5s;
+}
 
-.slide.active{opacity:1}
+.slide.active{
+opacity:1;
+}
 
-.btn{display:inline-block;padding:12px 20px;background:#ff7f11;color:#fff;border-radius:10px;text-decoration:none}
+/* RESTAURANT FIX */
+.restaurant-grid img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+background:#ff7f11;
+color:white;
+border-radius:10px;
+text-decoration:none;
+margin-top:10px;
+}
+
+@media(max-width:700px){
+.grid{
+grid-template-columns:1fr;
+}
+}
 
 </style>
 </head>
@@ -39,7 +103,7 @@ header{background:#0f4c5c;color:#fff;padding:15px;text-align:center;font-size:24
 
 <!-- HERO -->
 <div class="section">
-<h1>🌴 Your Tropical Escape</h1>
+<h1>🌴 Your Tropical Escape in Rayong</h1>
 <a class="btn" href="https://wa.me/66811520624">💬 WhatsApp</a>
 </div>
 
@@ -54,14 +118,16 @@ header{background:#0f4c5c;color:#fff;padding:15px;text-align:center;font-size:24
 <img class="slide room1 active" src="room1.jpg">
 <img class="slide room1" src="room1b.jpg">
 <img class="slide room1" src="bathroom.jpg">
-<p>🌿 Comfort Room • From 1200 THB</p>
+
+<p>🌿 Comfort Room • Airco • WiFi • From 1200 THB / night</p>
 </div>
 
 <!-- ROOM 2 -->
 <div class="card slider">
 <img class="slide room2 active" src="room2.jpg">
 <img class="slide room2" src="room2b.jpg">
-<p>🌴 Family Room • From 1800 THB</p>
+
+<p>🌴 Family Room • Spacious • From 1800 THB / night</p>
 </div>
 
 </div>
@@ -70,10 +136,12 @@ header{background:#0f4c5c;color:#fff;padding:15px;text-align:center;font-size:24
 <!-- RESTAURANT -->
 <div class="section">
 <h2>Restaurant & Bar</h2>
-<div class="grid">
+
+<div class="grid restaurant-grid">
 <img src="restaurant.jpg">
 <img src="bar.jpg">
 </div>
+
 </div>
 
 <!-- GARDEN -->
@@ -89,6 +157,7 @@ header{background:#0f4c5c;color:#fff;padding:15px;text-align:center;font-size:24
 
 <script>
 
+/* SLIDERS */
 function slider(name){
 let slides=document.querySelectorAll("."+name);
 let i=0;
