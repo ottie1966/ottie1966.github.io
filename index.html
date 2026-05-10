@@ -146,6 +146,13 @@ function slider(cls){
 
   if(slides.length === 0) return;
 
+  <script>
+function slider(cls){
+  let slides = document.querySelectorAll("." + cls);
+  let i = 0;
+
+  if(slides.length === 0) return;
+
   slides.forEach((s, index)=>{
     s.style.position = "absolute";
     s.style.opacity = "0";
@@ -167,7 +174,6 @@ slider("room2-slide");
 slider("garden-slide");
 slider("bar-slide");
 </script>
-<body>
 
 <header>Sawaddee Holland Rayong</header>
 
