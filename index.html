@@ -14,21 +14,36 @@ body{
   color:white;
 }
 
-/* LOGO TOP */
+/* LOGO */
 .top-logo{
-  width:100%;
-  background:#000;
   text-align:center;
-  padding:15px 0;
+  padding:15px;
 }
 .top-logo img{
   width:150px;
 }
 
+/* RATING TOP */
+.rating{
+  text-align:center;
+  margin-top:-10px;
+  margin-bottom:10px;
+}
+.rating span{
+  font-size:20px;
+  color:gold;
+}
+.rating a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
 /* HERO */
 .hero{
   position:relative;
-  height:450px;
+  height:400px;
   overflow:hidden;
 }
 .hero img{
@@ -42,39 +57,29 @@ body{
 .hero img.active{
   opacity:1;
 }
-
-/* OVERLAY */
 .overlay{
   position:absolute;
   bottom:0;
   width:100%;
   background:rgba(0,0,0,0.5);
   text-align:center;
-  padding:20px;
+  padding:15px;
 }
 
-/* INTRO TEXT */
+/* INTRO */
 .rooms-intro{
   max-width:750px;
-  margin:40px auto 10px;
+  margin:30px auto;
   text-align:center;
   padding:0 15px;
-}
-.rooms-intro h2{
-  margin-bottom:10px;
-}
-.rooms-intro p{
-  font-size:15px;
-  line-height:1.6;
-  margin-bottom:15px;
 }
 
 /* SECTIONS */
 .section{
   max-width:650px;
-  margin:30px auto;
+  margin:25px auto;
   position:relative;
-  height:320px;
+  height:300px;
   overflow:hidden;
   border-radius:15px;
 }
@@ -89,8 +94,6 @@ body{
 .section img.active{
   opacity:1;
 }
-
-/* TEXT OVERLAY */
 .text{
   position:absolute;
   bottom:0;
@@ -100,17 +103,35 @@ body{
   padding:10px;
 }
 
+/* REVIEWS BLOCK */
+.reviews{
+  max-width:700px;
+  margin:40px auto;
+  text-align:center;
+}
+.reviews iframe{
+  border-radius:10px;
+}
+.reviews a{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  background:#fff;
+  color:#000;
+  border-radius:8px;
+  text-decoration:none;
+}
+
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
-  color:white;
   padding:15px;
   border-radius:50%;
   text-decoration:none;
-  font-size:20px;
+  color:white;
 }
 </style>
 </head>
@@ -120,6 +141,14 @@ body{
 <!-- LOGO -->
 <div class="top-logo">
   <img src="logo.png">
+</div>
+
+<!-- ⭐ GOOGLE RATING -->
+<div class="rating">
+  <span>⭐⭐⭐⭐⭐</span>
+  <a href="https://www.google.com/search?q=Sawaddee+Holland+Rayong#lrd=0x0:0x0,1" target="_blank">
+    View all Google Reviews
+  </a>
 </div>
 
 <!-- HERO -->
@@ -134,83 +163,50 @@ body{
   </div>
 </div>
 
-<!-- ROOMS INTRO -->
+<!-- INTRO -->
 <div class="rooms-intro">
   <h2>Our Rooms / Onze Kamers / ห้องพักของเรา</h2>
 
-  <p>
-  🇬🇧 We offer 3 comfortable Comfort Rooms and 2 spacious Family Rooms.  
-  The Family Room is a full apartment and can also be rented entirely for longer stays or groups.  
-  All rooms include air conditioning, TV, refrigerator and a private outdoor terrace.
-  </p>
-
-  <p>
-  🇳🇱 Wij hebben 3 Comfort Rooms en 2 ruime Family Rooms.  
-  De Family Room is een volledig appartement en kan ook in zijn geheel gehuurd worden.  
-  Alle kamers beschikken over airconditioning, tv, koelkast en een privé terras buiten.
-  </p>
-
-  <p>
-  🇹🇭 เรามีห้องพักแบบ Comfort 3 ห้อง และ Family Room 2 ห้อง  
-  Family Room เป็นอพาร์ทเมนท์ สามารถเช่าแบบทั้งห้องได้  
-  ทุกห้องมีแอร์ ทีวี ตู้เย็น และระเบียงส่วนตัวด้านนอก
-  </p>
+  <p>🇬🇧 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. All rooms have AC, TV, fridge and private terrace.</p>
+  <p>🇳🇱 3 Comfort Rooms en 2 Family Rooms. De Family Room is een appartement en volledig te huur. Alle kamers hebben airco, tv, koelkast en terras.</p>
+  <p>🇹🇭 ห้องพัก Comfort 3 ห้อง และ Family Room 2 ห้อง พร้อมแอร์ ทีวี ตู้เย็น และระเบียง</p>
 </div>
 
-<!-- ROOM 1 -->
+<!-- GOOGLE REVIEWS -->
+<div class="reviews">
+  <h2>Guest Reviews ⭐</h2>
+  <p>Trusted by our guests</p>
+
+  <iframe 
+    src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
+    width="100%" height="250">
+  </iframe>
+
+  <a href="https://www.google.com/search?q=Sawaddee+Holland+Rayong#lrd=0x0:0x0,3" target="_blank">
+    Write a Review
+  </a>
+</div>
+
+<!-- ROOMS -->
 <div class="section">
   <img class="room1 active" src="room1.jpg">
   <img class="room1" src="room1b.jpg">
-
   <div class="text">
     <h3>Comfort Room</h3>
-    <p>1200 Baht per night</p>
+    <p>1200 Baht</p>
   </div>
 </div>
 
-<!-- ROOM 2 -->
 <div class="section">
   <img class="room2 active" src="room2.jpg">
   <img class="room2" src="room2b.jpg">
-
   <div class="text">
     <h3>Family Room</h3>
-    <p>1800 Baht per night</p>
+    <p>1800 Baht</p>
   </div>
 </div>
 
-<!-- BAR -->
-<div class="section">
-  <img class="bar active" src="bar1.jpg">
-  <img class="bar" src="bar2.jpg">
-  <img class="bar" src="bar3.jpg">
-
-  <div class="text">
-    <h3>Bar & Restaurant</h3>
-    <p>Relax • Drinks • Food • Pool Table</p>
-  </div>
-</div>
-
-<!-- GARDEN -->
-<div class="section">
-  <img class="garden active" src="garden1.jpg">
-  <img class="garden" src="garden2.jpg">
-  <img class="garden" src="outside.jpg">
-
-  <div class="text">
-    <h3>Garden</h3>
-    <p>Tropical Relax Area</p>
-  </div>
-</div>
-
-<!-- MAP -->
-<div class="section">
-  <iframe 
-    src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
-    width="100%" height="320" style="border:0;">
-  </iframe>
-</div>
-
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
 <script>
@@ -228,12 +224,8 @@ function slider(className){
 slider("hero-slide");
 slider("room1");
 slider("room2");
-slider("bar");
-slider("garden");
 </script>
 
 </body>
 </html>
 ```
-
----
