@@ -23,14 +23,13 @@ body{
   width:150px;
 }
 
-/* LANGUAGE SWITCH */
+/* LANGUAGE */
 .lang{
   text-align:center;
-  margin-bottom:10px;
 }
 .lang button{
   margin:5px;
-  padding:5px 10px;
+  padding:6px 12px;
   border:none;
   border-radius:5px;
   cursor:pointer;
@@ -39,10 +38,11 @@ body{
 /* RATING */
 .rating{
   text-align:center;
+  margin-bottom:10px;
 }
 .rating span{
   color:gold;
-  font-size:20px;
+  font-size:22px;
 }
 
 /* HERO */
@@ -71,12 +71,19 @@ body{
   padding:15px;
 }
 
-/* TEXT BLOCK */
+/* TEXT */
 .text-block{
   max-width:750px;
   margin:30px auto;
   text-align:center;
   padding:0 15px;
+}
+
+/* REVIEWS */
+.reviews{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 10px;
 }
 
 /* ROOMS */
@@ -94,6 +101,7 @@ body{
   height:100%;
   object-fit:cover;
   opacity:0;
+  transition:1s;
 }
 .section img.active{
   opacity:1;
@@ -105,13 +113,6 @@ body{
   background:rgba(0,0,0,0.5);
   text-align:center;
   padding:10px;
-}
-
-/* REVIEWS */
-.reviews{
-  max-width:800px;
-  margin:40px auto;
-  text-align:center;
 }
 
 /* WHATSAPP */
@@ -130,6 +131,7 @@ body{
 
 <body>
 
+<!-- LOGO -->
 <div class="top-logo">
   <img src="logo.png">
 </div>
@@ -143,8 +145,8 @@ body{
 
 <!-- RATING -->
 <div class="rating">
-  <span id="stars">⭐⭐⭐⭐⭐</span>
-  <p id="ratingText">Loading rating...</p>
+  <span>⭐⭐⭐⭐⭐</span>
+  <p>Google Reviews</p>
 </div>
 
 <!-- HERO -->
@@ -155,23 +157,20 @@ body{
 
   <div class="overlay">
     <h2>Sawaddee Holland Rayong</h2>
+    <p>Relax • Beach • Comfort • Hospitality</p>
   </div>
 </div>
 
 <!-- TEXT -->
-<div class="text-block" id="text">
-</div>
+<div class="text-block" id="text"></div>
 
-<!-- LIVE REVIEWS -->
+<!-- GOOGLE REVIEWS LIVE -->
 <div class="reviews">
-  <h2>Google Reviews</h2>
 
-  <!-- 🔥 PLAK HIER JE WIDGET -->
-  <!-- Ga naar: https://elfsight.com/google-reviews-widget/ -->
-  <!-- vervang hieronder met jouw code -->
-  <div id="google-reviews">
-    <p>➡️ Voeg hier je Google Reviews widget toe</p>
-  </div>
+  <!-- Elfsight Google Reviews -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-04955501-80c9-4bb5-944b-cfbebcb766b9" data-elfsight-app-lazy></div>
+
 </div>
 
 <!-- ROOMS -->
@@ -180,7 +179,7 @@ body{
   <img class="room1" src="room1b.jpg">
   <div class="text">
     <h3>Comfort Room</h3>
-    <p>1200 Baht</p>
+    <p>1200 Baht per night</p>
   </div>
 </div>
 
@@ -189,25 +188,24 @@ body{
   <img class="room2" src="room2b.jpg">
   <div class="text">
     <h3>Family Room</h3>
-    <p>1800 Baht</p>
+    <p>1800 Baht per night</p>
   </div>
 </div>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
 <script>
 // LANGUAGE TEXT
 const texts = {
-  en: "We offer 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. All rooms have AC, TV, fridge and terrace.",
-  nl: "Wij hebben 3 Comfort Rooms en 2 Family Rooms. De Family Room is een appartement en volledig te huur. Alle kamers hebben airco, tv, koelkast en terras.",
-  th: "เรามีห้อง Comfort 3 ห้อง และ Family Room 2 ห้อง พร้อมแอร์ ทีวี ตู้เย็น และระเบียง"
+  en: "We offer 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. All rooms have AC, TV, fridge and a private terrace.",
+  nl: "Wij hebben 3 Comfort Rooms en 2 Family Rooms. De Family Room is een appartement en volledig te huur. Alle kamers hebben airco, tv, koelkast en een privé terras.",
+  th: "เรามีห้อง Comfort 3 ห้อง และ Family Room 2 ห้อง ห้องมีแอร์ ทีวี ตู้เย็น และระเบียงส่วนตัว"
 };
 
 function setLang(lang){
   document.getElementById("text").innerText = texts[lang];
 }
-
-// DEFAULT
 setLang("en");
 
 // SLIDER
@@ -224,10 +222,6 @@ function slider(name){
 slider("hero-slide");
 slider("room1");
 slider("room2");
-
-// ⭐ SIMULATED RATING (KAN JE LATER LIVE MAKEN MET API)
-document.getElementById("ratingText").innerText = "4.8 / 5 • Google Reviews";
-
 </script>
 
 </body>
