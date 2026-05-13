@@ -1,56 +1,37 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sawaddee Holland Rayong</title>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3D09FBR8W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-R3D09FBR8W');
-</script>
+
 <style>
 body{margin:0;font-family:Arial;background:#000;color:white;}
 
-/* LOGO */
 .top-logo{text-align:center;padding:15px;}
 .top-logo img{width:150px;}
 
-/* LANGUAGE */
 .lang{text-align:center;}
 .lang button{margin:5px;padding:6px 12px;border:none;border-radius:5px;cursor:pointer;}
 
-/* RATING */
 .rating{text-align:center;margin-bottom:10px;}
 .rating span{color:gold;font-size:22px;}
 
-/* HERO */
 .hero{position:relative;height:400px;overflow:hidden;}
 .hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1s;}
 .hero img.active{opacity:1;}
 .overlay{position:absolute;bottom:0;width:100%;background:rgba(0,0,0,0.5);text-align:center;padding:15px;}
 
-/* TEXT */
 .text-block{max-width:750px;margin:30px auto;text-align:center;padding:0 15px;}
 
-/* REVIEWS */
-.reviews{max-width:900px;margin:40px auto;padding:0 10px;}
-
-/* SECTIONS */
 .section{max-width:650px;margin:25px auto;height:300px;position:relative;overflow:hidden;border-radius:15px;}
 .section img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1s;}
 .section img.active{opacity:1;}
 .text{position:absolute;bottom:0;width:100%;background:rgba(0,0,0,0.5);text-align:center;padding:10px;}
 
-/* MAP */
 .map{max-width:650px;margin:30px auto;}
 .map iframe{width:100%;height:300px;border:0;border-radius:15px;}
 
-/* WHATSAPP */
 .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;color:white;text-decoration:none;}
 </style>
 </head>
@@ -72,7 +53,6 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   <p>Google Reviews</p>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <img class="hero-slide active" src="beach1.jpg">
   <img class="hero-slide" src="beach2.jpg">
@@ -83,14 +63,7 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   </div>
 </div>
 
-<!-- TEXT -->
-<div class="text-block" id="text"></div>
-
-<!-- REVIEWS -->
-<div class="reviews">
-  <script src="https://elfsightcdn.com/platform.js" async></script>
-  <div class="elfsight-app-04955501-80c9-4bb5-944b-cfbebcb766b9"></div>
-</div>
+<div class="text-block" id="text">Loading...</div>
 
 <!-- ROOMS -->
 <div class="section">
@@ -111,7 +84,6 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   </div>
 </div>
 
-<!-- BAR -->
 <div class="section">
   <img class="bar active" src="bar1.jpg">
   <img class="bar" src="bar2.jpg">
@@ -122,7 +94,6 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   </div>
 </div>
 
-<!-- GARDEN -->
 <div class="section">
   <img class="garden active" src="garden1.jpg">
   <img class="garden" src="garden2.jpg">
@@ -133,7 +104,6 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   </div>
 </div>
 
-<!-- MAP -->
 <div class="map">
   <iframe src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"></iframe>
 </div>
@@ -141,18 +111,24 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
 <script>
-// LANGUAGE
-const texts = 
-  en: "We offer 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. All rooms have AC, TV, fridge and terrace.",
-  nl: "Wij hebben 3 Comfort Rooms en 2 Family Rooms. De Family Room is een appartement en volledig te huur. Alle kamers hebben airco, tv, koelkast en terras.",
-  th: "เรามีห้อง Comfort 3 ห้อง และ Family Room 2 ห้อง พร้อมแอร์ ทีวี ตู้เย็น และระเบียง"
+// TEXTEN
+const texts = {
+  en: "Only 200 meters from the beach. We offer 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. All rooms have AC, TV, fridge and terrace.",
+  nl: "Slechts 200 meter van het strand. Wij hebben 3 Comfort Rooms en 2 Family Rooms. De Family Room is een appartement en volledig te huur. Alle kamers hebben airco, tv, koelkast en terras.",
+  th: "ห่างจากชายหาดเพียง 200 เมตร เรามีห้อง Comfort 3 ห้อง และ Family Room 2 ห้อง พร้อมแอร์ ทีวี ตู้เย็น และระเบียง"
 };
-function setLang(lang){document.getElementById("text").innerText = texts[lang];}
+
+function setLang(lang){
+  document.getElementById("text").innerText = texts[lang];
+}
+
 setLang("en");
 
-// SLIDERS
+// SLIDER
 function slider(name){
-  let slides=document.querySelectorAll("." + name);
+  let slides = document.querySelectorAll("." + name);
+  if(slides.length === 0) return;
+
   let i=0;
   setInterval(()=>{
     slides[i].classList.remove("active");
@@ -160,6 +136,7 @@ function slider(name){
     slides[i].classList.add("active");
   },3000);
 }
+
 slider("hero-slide");
 slider("room1");
 slider("room2");
@@ -169,4 +146,3 @@ slider("garden");
 
 </body>
 </html>
-```
