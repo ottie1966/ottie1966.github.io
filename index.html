@@ -8,14 +8,15 @@
 <style>
 body{
   margin:0;
-  font-family:Arial;
+  font-family:'Segoe UI', Arial, sans-serif;
   background:#000;
   color:white;
+  line-height:1.5;
 }
 
 /* LOGO */
 .top-logo{text-align:center;padding:15px;}
-.top-logo img{width:150px;}
+.top-logo img{width:140px;}
 
 /* LANGUAGE */
 .lang{text-align:center;}
@@ -26,9 +27,17 @@ body{
   border-radius:6px;
   cursor:pointer;
 }
+.lang button.active{
+  background:#25D366;
+  color:white;
+}
 
 /* HERO */
-.hero{position:relative;height:450px;overflow:hidden;}
+.hero{
+  position:relative;
+  height:65vh;
+  overflow:hidden;
+}
 .hero img{
   position:absolute;
   width:100%;
@@ -45,8 +54,10 @@ body{
   width:100%;
   background:rgba(0,0,0,0.6);
   text-align:center;
-  padding:20px;
+  padding:15px;
 }
+.overlay h1{margin:5px 0;font-size:26px;}
+.overlay p{margin:0;font-size:14px;}
 
 /* CTA */
 .cta{
@@ -55,19 +66,21 @@ body{
 }
 .cta a{
   background:#25D366;
-  padding:15px 30px;
+  padding:14px 25px;
   border-radius:12px;
   color:white;
   text-decoration:none;
-  font-size:18px;
+  font-size:16px;
+  display:inline-block;
 }
 
 /* TEXT */
 .text-block{
   max-width:750px;
-  margin:30px auto;
+  margin:20px auto;
   text-align:center;
   padding:0 15px;
+  font-size:15px;
 }
 
 /* TRUST */
@@ -75,13 +88,14 @@ body{
   text-align:center;
   margin:20px;
   line-height:1.8;
+  font-size:14px;
 }
 
 /* SECTIONS */
 .section{
   max-width:650px;
-  margin:25px auto;
-  height:300px;
+  margin:20px auto;
+  height:220px;
   position:relative;
   overflow:hidden;
   border-radius:15px;
@@ -115,10 +129,13 @@ body{
 }
 
 /* MAP */
-.map{max-width:650px;margin:30px auto;}
+.map{
+  max-width:650px;
+  margin:30px auto;
+}
 .map iframe{
   width:100%;
-  height:300px;
+  height:250px;
   border:0;
   border-radius:15px;
 }
@@ -126,14 +143,25 @@ body{
 /* WHATSAPP FLOAT */
 .whatsapp{
   position:fixed;
-  bottom:20px;
-  right:20px;
+  bottom:15px;
+  right:15px;
   background:#25D366;
-  padding:15px;
+  padding:12px;
   border-radius:50%;
   color:white;
   text-decoration:none;
-  font-size:20px;
+  font-size:18px;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .top-logo img{width:110px;}
+  .hero{height:60vh;}
+  .section{height:180px;}
+  h1{font-size:22px;}
+  h2{font-size:18px;}
+  p{font-size:14px;}
+  .map iframe{height:200px;}
 }
 </style>
 </head>
@@ -141,7 +169,7 @@ body{
 <body>
 
 <div class="top-logo">
-  <img src="logo.png">
+  <img src="logo.png" alt="Sawaddee Holland Rayong logo">
 </div>
 
 <div class="lang">
@@ -153,8 +181,8 @@ body{
 <!-- HERO -->
 <div class="hero">
   <img class="hero-slide active" src="beach1.jpg">
-  <img class="hero-slide" src="beach2.jpg">
-  <img class="hero-slide" src="beach3.jpg">
+  <img class="hero-slide" src="beach2.jpg" loading="lazy">
+  <img class="hero-slide" src="beach3.jpg" loading="lazy">
 
   <div class="overlay">
     <h1>Sawaddee Holland Rayong</h1>
@@ -164,7 +192,7 @@ body{
 
 <!-- CTA -->
 <div class="cta">
-  <a href="https://wa.me/66811520624?text=Hello%20I%20want%20to%20book%20a%20room">
+  <a href="https://wa.me/66811520624?text=Hello%20I%20want%20to%20book%20a%20room" target="_blank">
     📲 Book Now via WhatsApp
   </a>
 </div>
@@ -180,20 +208,17 @@ body{
   ✔ Quiet & Relaxing Location
 </div>
 
-<!-- REVIEWS (WERKT DIRECT NA ID) -->
+<!-- REVIEWS -->
 <div class="rating">
   <h2>⭐ Rated 5/5 on Google</h2>
-
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
-  <div class=""></div><!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-04955501-80c9-4bb5-944b-cfbebcb766b9" data-elfsight-app-lazy></div>
+  <div class="elfsight-app-04955501-80c9-4bb5-944b-cfbebcb766b9" data-elfsight-app-lazy></div>
 </div>
 
-<!-- ROOMS -->
+<!-- SECTIONS -->
 <div class="section">
   <img class="room1 active" src="room1.jpg">
-  <img class="room1" src="room1b.jpg">
+  <img class="room1" src="room1b.jpg" loading="lazy">
   <div class="text">
     <h3>Comfort Room</h3>
     <p>From 1200 Baht / night</p>
@@ -202,7 +227,7 @@ body{
 
 <div class="section">
   <img class="room2 active" src="room2.jpg">
-  <img class="room2" src="room2b.jpg">
+  <img class="room2" src="room2b.jpg" loading="lazy">
   <div class="text">
     <h3>Family Room</h3>
     <p>From 1800 Baht / night</p>
@@ -211,8 +236,8 @@ body{
 
 <div class="section">
   <img class="bar active" src="bar1.jpg">
-  <img class="bar" src="bar2.jpg">
-  <img class="bar" src="bar3.jpg">
+  <img class="bar" src="bar2.jpg" loading="lazy">
+  <img class="bar" src="bar3.jpg" loading="lazy">
   <div class="text">
     <h3>Bar & Restaurant</h3>
   </div>
@@ -220,8 +245,8 @@ body{
 
 <div class="section">
   <img class="garden active" src="garden1.jpg">
-  <img class="garden" src="garden2.jpg">
-  <img class="garden" src="outside.jpg">
+  <img class="garden" src="garden2.jpg" loading="lazy">
+  <img class="garden" src="outside.jpg" loading="lazy">
   <div class="text">
     <h3>Garden</h3>
   </div>
@@ -232,18 +257,24 @@ body{
   <iframe src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"></iframe>
 </div>
 
-<a class="whatsapp" href="https://wa.me/66811520624">💬</a>
+<a class="whatsapp" href="https://wa.me/66811520624" target="_blank">💬</a>
 
 <script>
 // TEXT
 const texts = {
-  en: "Only 200 meters from the beach. Quiet and relaxing location near the Koh Samet ferry. Perfect for island trips and comfortable stays.",
-  nl: "Slechts 200 meter van het strand. Rustige locatie dichtbij de ferry naar Koh Samet. Perfect voor uitstapjes en comfortabel verblijf.",
-  th: "ห่างจากชายหาดเพียง 200 เมตร บรรยากาศเงียบสงบ ใกล้ท่าเรือไปเกาะเสม็ด เหมาะสำหรับการพักผ่อน"
+  en: "Only 200 meters from the beach. Quiet and relaxing location near the Koh Samet ferry.",
+  nl: "Slechts 200 meter van het strand. Rustige locatie dichtbij de ferry naar Koh Samet.",
+  th: "ห่างจากชายหาดเพียง 200 เมตร บรรยากาศเงียบสงบ ใกล้ท่าเรือไปเกาะเสม็ด"
 };
 
 function setLang(lang){
-  document.getElementById("text").innerText = texts[lang];
+  document.getElementById("text").innerText = texts[lang] || texts.en;
+
+  document.querySelectorAll(".lang button").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  document.querySelector(`[onclick="setLang('${lang}')"]`).classList.add("active");
 }
 
 setLang("en");
@@ -251,6 +282,8 @@ setLang("en");
 // SLIDER
 function slider(name){
   let slides=document.querySelectorAll("."+name);
+  if(slides.length === 0) return;
+
   let i=0;
   setInterval(()=>{
     slides[i].classList.remove("active");
