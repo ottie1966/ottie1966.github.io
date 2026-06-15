@@ -14,8 +14,7 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
 .lang{text-align:center;}
 .lang button{margin:5px;padding:6px 12px;border:none;border-radius:5px;cursor:pointer;}
 
-.rating{text-align:center;margin-bottom:10px;}
-.rating span{color:gold;font-size:22px;}
+.rating{text-align:center;margin:20px auto;max-width:700px;}
 
 .hero{position:relative;height:400px;overflow:hidden;}
 .hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1s;}
@@ -48,11 +47,16 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   <button onclick="setLang('th')">TH</button>
 </div>
 
+<!-- ⭐ GOOGLE REVIEWS -->
 <div class="rating">
-  <span>⭐⭐⭐⭐⭐</span>
-  <p>Google Reviews</p>
+  <h2>⭐ Google Reviews</h2>
+
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <!-- 🔴 PLAK HIER JOUW WIDGET ID -->
+  <div class="elfsight-app-REPLACE_WITH_YOUR_ID"></div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <img class="hero-slide active" src="beach1.jpg">
   <img class="hero-slide" src="beach2.jpg">
@@ -104,6 +108,7 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
   </div>
 </div>
 
+<!-- MAP -->
 <div class="map">
   <iframe src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"></iframe>
 </div>
@@ -111,11 +116,13 @@ body{margin:0;font-family:Arial;background:#000;color:white;}
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
 <script>
-// TEXTEN
+// TEXTEN MET KOH SAMET
 const texts = {
-  en: "Only 200 meters from the beach. We offer 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. All rooms have AC, TV, fridge and terrace.",
-  nl: "Slechts 200 meter van het strand. Wij hebben 3 Comfort Rooms en 2 Family Rooms. De Family Room is een appartement en volledig te huur. Alle kamers hebben airco, tv, koelkast en terras.",
-  th: "ห่างจากชายหาดเพียง 200 เมตร เรามีห้อง Comfort 3 ห้อง และ Family Room 2 ห้อง พร้อมแอร์ ทีวี ตู้เย็น และระเบียง"
+  en: "Only 200 meters from the beach. We offer 3 Comfort Rooms and 2 Family Rooms. The Family Room is a full apartment and can be rented entirely. Located close to the Koh Samet ferry, perfect for island trips.",
+  
+  nl: "Slechts 200 meter van het strand. Wij hebben 3 Comfort Rooms en 2 Family Rooms. De Family Room is een volledig appartement. Gelegen dichtbij de ferry naar Koh Samet, ideaal voor uitstapjes naar het eiland.",
+  
+  th: "ห่างจากชายหาดเพียง 200 เมตร มีห้องพัก Comfort และ Family Room พร้อมสิ่งอำนวยความสะดวกครบครัน ใกล้ท่าเรือไปเกาะเสม็ด เหมาะสำหรับการท่องเที่ยวเกาะ"
 };
 
 function setLang(lang){
@@ -127,8 +134,6 @@ setLang("en");
 // SLIDER
 function slider(name){
   let slides = document.querySelectorAll("." + name);
-  if(slides.length === 0) return;
-
   let i=0;
   setInterval(()=>{
     slides[i].classList.remove("active");
